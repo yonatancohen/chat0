@@ -130,7 +130,7 @@ const MessageList = () => {
     return (
         <>
             <div ref={containerRef} onScroll={handleScroll}
-                className="flex-grow overflow-y-auto relative border rounded-lg p-2 pb-5 flex flex-col-reverse gap-2 items-start messages">
+                className="flex-grow overflow-y-auto relative border rounded-lg p-2 pb-7 flex flex-col-reverse gap-2 items-start messages">
                 <div ref={messagesEndRef} />
 
                 {messages.map((msg) => (
@@ -141,7 +141,9 @@ const MessageList = () => {
                             {msg.media_url && <img src={msg.media_url} alt="Media" className="rounded mt-2 max-w-xs" />}
                             {msg.content}
 
-                            <small className="block mt-1 text-xs text-right">{msg.timestamp.toDate().toLocaleTimeString()}</small>
+                            {msg.timestamp && (
+                                <small className="block mt-1 text-xs text-right">{msg.timestamp.toDate().toLocaleTimeString()}</small>
+                            )}
                         </div>
                         {msg.profile_image_url && (
                             <img src={msg.profile_image_url} alt={msg.profile_name} className="rounded-full w-6 h-6 object-cover" />

@@ -37,6 +37,11 @@ const MessageInput = () => {
             user_uuid: auth.currentUser?.uid
         });
 
+        const chat_doc = doc(db, `chats/${docId}`);
+        await updateDoc(chat_doc, {
+            last_message_ts: serverTimestamp()
+        });
+
         setNewMessage("");
         setIsSending(false);
 
