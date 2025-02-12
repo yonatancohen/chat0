@@ -1,6 +1,6 @@
 
 const generateUniqueName = async () => {
-    const response = await fetch('https://randomuser.me/api/?inc=name');
+    const response = await fetch('https://randomuser.me/api/?inc=name&nat=US');
     const json = await response.json();
     const result = json.results.at(0);
 
