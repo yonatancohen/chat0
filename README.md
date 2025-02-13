@@ -8,3 +8,11 @@ Some key features:
 
 Install all dependencies, and run with vite.
 "npm run dev"
+
+
+*Need to know*
+
+I implemeneted anonymous login as soon as the app start to save time for the registation process.
+I could used Social login as well.
+- Open the browser in incoginto mode.
+- I forgot to implmenet logout.
